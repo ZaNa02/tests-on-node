@@ -11,6 +11,20 @@ expect(res).toBe(44).toBeA('number');//for any info on this assertion go to: htt
   // }
 });
 
+it('should async add two numbers', (done) => {
+  utils.asyncAdd(2, 8, (sum) => {
+    expect(sum).toBe(10).toBeA('number');
+    done();
+  });
+});
+
+it('should async square a number', (done) => {
+  utils.asyncSquare(6, (res) => {
+    expect(res).toBe(36).toBeA('number');
+    done();
+  });
+});
+
 it('Should multiply two numbers', () => {
   var res = utils.square(6);
 expect(res).toBe(36).toBeA('number');
